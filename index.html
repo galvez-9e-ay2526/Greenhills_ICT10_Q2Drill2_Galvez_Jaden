@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://pyscript.net/releases/2026.7.3/core.css" />
+    <script type="module" src="https://pyscript.net/releases/2026.7.3/core.js"></script>
+    <title>Student Club Member</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            padding: 45px 20px;
+            font-family: Arial, sans-serif;
+            color: #f5f5f5;
+            background:
+                radial-gradient(circle at 15% 15%, #164e55 0, transparent 30%),
+                radial-gradient(circle at 85% 85%, #502052 0, transparent 30%),
+                #101114;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        h1 {
+            margin: 0;
+            color: #50e3d0;
+            text-align: center;
+            font-size: 2.5rem;
+            letter-spacing: 2px;
+            text-shadow: 3px 3px 0 #e84c9a;
+        }
+
+        .subtitle {
+            margin: 12px 0 30px;
+            color: #ff9b42;
+            text-align: center;
+            font-size: 0.95rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 540px;
+            padding: 30px;
+            background: rgba(24, 25, 30, 0.96);
+            border: 2px solid #50e3d0;
+            border-radius: 18px;
+            box-shadow:
+                0 0 0 5px rgba(232, 76, 154, 0.15),
+                0 0 30px rgba(80, 227, 208, 0.15);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .container::before {
+            content: "";
+            display: block;
+            height: 6px;
+            margin: -30px -30px 28px;
+            background: linear-gradient(
+                90deg,
+                #50e3d0 0%,
+                #e84c9a 33%,
+                #ff9b42 66%,
+                #a78bfa 100%
+            );
+        }
+
+        h3 {
+            margin: 0 0 22px;
+            color: #ff9b42;
+            font-size: 1.25rem;
+        }
+
+        input {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 15px;
+            background: #111216;
+            color: #ffffff;
+            border: 1px solid #55515e;
+            border-radius: 9px;
+            font-size: 1rem;
+            outline: none;
+            transition: 0.25s;
+        }
+
+        input::placeholder {
+            color: #aaa5b5;
+        }
+
+        input:focus {
+            border-color: #50e3d0;
+            box-shadow: 0 0 10px rgba(80, 227, 208, 0.2);
+        }
+
+        button {
+            width: 100%;
+            padding: 15px;
+            margin-top: 4px;
+            background: linear-gradient(100deg, #50e3d0, #e84c9a);
+            color: #111216;
+            border: none;
+            border-radius: 9px;
+            font-size: 1rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: 0.25s;
+        }
+
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 18px rgba(232, 76, 154, 0.3);
+            filter: brightness(1.1);
+        }
+
+        #output {
+            margin-top: 25px;
+            padding: 20px;
+            background: #111216;
+            border: 1px solid #a78bfa;
+            border-radius: 10px;
+            color: #e8e5ef;
+            line-height: 1.9;
+            overflow-wrap: anywhere;
+        }
+
+        @media (max-width: 480px) {
+            body {
+                padding: 30px 15px;
+            }
+
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            .subtitle {
+                font-size: 0.75rem;
+                letter-spacing: 2px;
+            }
+
+            .container {
+                padding: 22px;
+            }
+
+            .container::before {
+                margin: -22px -22px 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h3>Add new club member:</h3>
+
+    <input type="text" id="first_name" placeholder="First Name">
+    <input type="text" id="last_name" placeholder="Last Name">
+
+    <button py-click="add_member">Submit</button>
+    <div id="output"></div>
+    <script type="py" src="main.py"></script>
+    
+</body>
+</html>
